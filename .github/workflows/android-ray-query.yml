@@ -63,4 +63,15 @@ jobs:
           path: build/android_gradle/app/build/outputs/apk/release/*.apk
           if-no-files-found: error
           retention-days: 7
+      
+      - name: Upload Vulkan assets and shaders
+        uses: actions/upload-artifact@v6
+        with:
+          name: Vulkan-Samples-Data
+          path: |
+            assets/
+            shaders/
+          if-no-files-found: error
+          retention-days: 7
+          
           
